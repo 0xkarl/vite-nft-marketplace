@@ -14,6 +14,8 @@ export function useQueryContractState<T>(
   const [value, setValue] = useState<T | null>(null);
 
   useEffect(() => {
+    if (!params) return;
+
     let isMounted = true;
     const unsubs = [
       () => {

@@ -6,9 +6,10 @@ import Dialog from '@material-ui/core/Dialog';
 import CloseIcon from '@material-ui/icons/Close';
 import QRCode from 'qrcode.react';
 import Connector from '@vite/connector';
-import { vite } from '@vitex';
+import pick from 'lodash/pick';
 
-import { ViteWalletContext } from './vite';
+import { useViteProvider, ViteWalletContext } from './vite';
+import * as utils from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   closeBtn: {
@@ -38,6 +39,7 @@ type ConnectResponsePayload = {
 export const ViteConnectProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
+  const { provider } = useViteProvider();
   const [walletAddress, setWalletAddress] = useState<string | null>(null);
   const [connectionUri, setConnectionUri] = useState<string | null>(null);
   const classes = useStyles();
@@ -62,7 +64,18 @@ export const ViteConnectProvider: FC<{ children: ReactNode }> = ({
   };
 
   const createAccountBlock = async (typ: string, params: any) => {
-    const accountBlock = vite.accountBlock.createAccountBlock(typ, params);
+    const block = await utils.createAccountBlock(provider, typ, params);
+    const b = pick(block, [
+      'address',
+      'amount',
+      'blockType',
+      'data',
+      'fee',
+      'height',
+      'previousHash',
+      'tokenId',
+      '_toAddress',
+    ]);
 
     return await new Promise((resolve, reject) => {
       vbInstance.on('disconnect', () => {
@@ -72,12 +85,21 @@ export const ViteConnectProvider: FC<{ children: ReactNode }> = ({
       vbInstance
         .sendCustomRequest({
           method: 'vite_signAndSendTx',
-          params: [accountBlock],
+          params: [
+            {
+              block: {
+                ...b,
+                toAddress: b._toAddress,
+              }
+            },
+          ],
         })
         .then((r: any) => {
+          console.log(r)
           resolve(r);
         })
         .catch((e: any) => {
+          console.log(e)
           reject(e);
         });
     });

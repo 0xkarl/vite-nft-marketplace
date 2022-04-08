@@ -285,7 +285,7 @@ const Page: FC<{ match: { params: { tokenId: string } } }> = ({
   );
 
   const isApprovedForAllQueryParams = useMemo(
-    () => [walletAddress, marketplaceContractAddress],
+    () => (!walletAddress ? null : [walletAddress, marketplaceContractAddress]),
     [walletAddress, marketplaceContractAddress]
   );
   const isApprovedForAllQueryEvents = useMemo(() => ['ApprovalForAll'], []);

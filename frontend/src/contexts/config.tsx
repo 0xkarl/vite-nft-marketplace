@@ -16,7 +16,7 @@ const BAYC_CONTRACT_ADDRESSES: Record<Network, string> = {
 const MARKETPLACE_CONTRACT_ADDRESSES: Record<
   Network,
   string
-  > = BAYC_CONTRACT_ADDRESSES;
+> = BAYC_CONTRACT_ADDRESSES;
 
 // const MARKETPLACE_CONTRACT_ADDRESSES: Record<Network, string> = {
 //   mainnet: '',

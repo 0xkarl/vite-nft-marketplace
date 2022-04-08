@@ -1,7 +1,8 @@
 import React, { FC, ReactNode, useMemo } from 'react';
-import {vite} from '@vitex';
+import { vite } from '@vitex';
 
 import { useViteProvider, ViteWalletContext } from './vite';
+import * as utils from '../utils';
 
 const PRIVATE_KEY1 = import.meta.env.VITE_PRIVATE_KEY as string;
 const PRIVATE_KEY2 = import.meta.env.VITE_PRIVATE_KEY2 as string;
@@ -25,37 +26,9 @@ export const VitePrivatekeyProvider: FC<{ children: ReactNode }> = ({
   const createAccountBlock = async (typ: string, params: any) => {
     if (!wallet) return;
 
-    const block = vite.accountBlock.createAccountBlock(typ, params);
+    const block = await utils.createAccountBlock(provider, typ, params);
 
-    block.setProvider(provider).setPrivateKey(wallet.privateKey);
-    await block.autoSetPreviousAccountBlock();
-
-    // get difficulty
-    const { difficulty } = await provider.request('ledger_getPoWDifficulty', {
-      address: block.address,
-      previousHash: block.previousHash,
-      blockType: block.blockType,
-      toAddress: block.toAddress,
-      data: block.data,
-    });
-
-    // if difficulty is null,
-    // it indicates the account has enough quota to send the transaction
-    // there is no need to do PoW
-    if (difficulty) {
-      const getNonceHashBuffer = Buffer.from(
-        block.originalAddress + block.previousHash,
-        'hex'
-      );
-      const getNonceHash = vite.utils.blake2bHex(getNonceHashBuffer, null, 32);
-      const nonce = await provider.request(
-        'util_getPoWNonce',
-        difficulty,
-        getNonceHash
-      );
-      block.setDifficulty(difficulty);
-      block.setNonce(nonce);
-    }
+    block.setPrivateKey(wallet.privateKey);
 
     console.log(await block.sign().send());
   };

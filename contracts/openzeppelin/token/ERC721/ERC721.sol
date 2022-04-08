@@ -207,11 +207,11 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         address to,
         uint256 tokenId
     ) public virtual override {
-        //solhint-disable-next-line max-line-length
-        require(
-            _isApprovedOrOwner(_msgSender(), tokenId),
-            "ERC721: transfer caller is not owner nor approved"
-        );
+        // //solhint-disable-next-line max-line-length
+        // require(
+        //     _isApprovedOrOwner(_msgSender(), tokenId),
+        //     "ERC721: transfer caller is not owner nor approved"
+        // );
 
         _transfer(from, to, tokenId);
     }
