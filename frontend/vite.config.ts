@@ -25,7 +25,5 @@ export default defineConfig({
       modules: { Buffer: ['buffer', 'Buffer'] },
     }),
   ],
-  define: {
-    'process.env.NODE_DEBUG': 'false',
-  },
+  define: {},
 });

@@ -600,7 +600,7 @@ const Page: FC<{ match: { params: { tokenId: string } } }> = ({
               </>
             ) : (
               <>
-                {!tokenMarkets ? null : (
+                {!(hasOffer && tokenMarkets) ? null : (
                   <Button
                     variant='contained'
                     color='primary'
@@ -621,11 +621,11 @@ const Page: FC<{ match: { params: { tokenId: string } } }> = ({
                   onClick={() => setShowTxModal(true)}
                 >
                   {lastSelfBid
-                    ? `Update your current bid of ${formatUnits(
+                    ? `Update bid (${formatUnits(
                         lastSelfBid.lockedBid,
                         18,
                         2
-                      )} VITE`
+                      )} VITE)`
                     : 'Place a bid'}
                 </Button>
                 {!lastSelfBid ? null : (
@@ -637,8 +637,12 @@ const Page: FC<{ match: { params: { tokenId: string } } }> = ({
                     {removeBidTx.working || (
                       <>
                         {' '}
-                        Remove your bid of{' '}
-                        {formatUnits(lastSelfBid.lockedBid, 18, 2)} VITE
+                        Remove bid ({formatUnits(
+                          lastSelfBid.lockedBid,
+                          18,
+                          2
+                        )}{' '}
+                        VITE)
                       </>
                     )}
                   </Button>

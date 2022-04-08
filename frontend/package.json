@@ -18,8 +18,6 @@
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@vite/bridge": "^2.0.0",
     "@vite/connector": "^0.0.2",
-    "@vite/vitejs": "^2.3.18",
-    "@vite/vitejs-ws": "^2.3.18",
     "bignumber.js": "^9.0.1",
     "buffer": "^5.5.0",
     "clsx": "1.1.1",

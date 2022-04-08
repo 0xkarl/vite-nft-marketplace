@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useMemo } from 'react';
-import * as vite from '@vite/vitejs';
+import {vite} from '@vitex';
 
 import { useViteProvider, ViteWalletContext } from './vite';
 

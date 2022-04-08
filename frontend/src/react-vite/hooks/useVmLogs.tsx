@@ -1,6 +1,5 @@
 import { useMemo, useEffect, useState } from 'react';
-import * as vite from '@vite/vitejs';
-import { WS_RPC } from '@vite/vitejs-ws';
+import { vite, WS_RPC } from '@vitex';
 
 import { Fragment } from '../types';
 

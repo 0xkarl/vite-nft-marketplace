@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
-pragma experimental Await;
-// pragma experimental ABIEncoderV2;
 
 import "./openzeppelin/token/ERC721/extensions/ERC721Enumerable.sol";
 import "./openzeppelin/access/Ownable.sol";
@@ -14,8 +12,7 @@ contract BAYC is ERC721Enumerable {
     uint256 public maxApes = 1 ether;
     string public constant BASE_URL = "ipfs://QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq/";
 
-    constructor(string memory name, string memory symbol) ERC721(name, symbol) {
-        // ERC721("BoredApeYachtClub", "BAYC")
+    constructor() ERC721("BoredApeYachtClub", "BAYC") {
     }
 
     function baseURI() public pure returns (string memory) {

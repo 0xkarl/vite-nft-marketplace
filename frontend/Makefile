@@ -8,6 +8,7 @@ node_modules:
 	@yarn
 
 deploy:
+	@rm -rf dist
 	@yarn build
 	@surge -d vite-nft-marketplace.surge.sh dist
 

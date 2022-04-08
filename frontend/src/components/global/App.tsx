@@ -7,9 +7,13 @@ import theme from '@utils/theme';
 import { ConfigProvider } from '@contexts/config';
 import {
   ViteProvider,
-  // ViteConnectProvider as ViteWalletProvider,
-  VitePrivatekeyProvider as ViteWalletProvider,
+  ViteConnectProvider,
+  VitePrivatekeyProvider,
 } from '@react-vite';
+
+const ViteWalletProvider = import.meta.env.PROD
+  ? ViteConnectProvider
+  : VitePrivatekeyProvider;
 
 const App: FC = () => {
   return (

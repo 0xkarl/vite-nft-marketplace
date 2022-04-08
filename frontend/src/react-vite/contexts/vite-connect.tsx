@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode, useState, useMemo } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -6,7 +6,7 @@ import Dialog from '@material-ui/core/Dialog';
 import CloseIcon from '@material-ui/icons/Close';
 import QRCode from 'qrcode.react';
 import Connector from '@vite/connector';
-import * as vite from '@vite/vitejs';
+import { vite } from '@vitex';
 
 import { ViteWalletContext } from './vite';
 

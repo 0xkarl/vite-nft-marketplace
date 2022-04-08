@@ -1,5 +1,5 @@
 import { useContext, createContext } from 'react';
-import { WS_RPC } from '@vite/vitejs-ws';
+import { WS_RPC } from '@vitex';
 
 import { Network } from '../types';
 

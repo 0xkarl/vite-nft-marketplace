@@ -84,29 +84,29 @@
     semver "^5.5.0"
     tmp "0.0.33"
 
-"@vite/vitejs-accountblock@^2.3.17":
+"@vitex/vitejs-accountblock@^2.3.17":
   version "2.3.18"
-  resolved "https://registry.yarnpkg.com/@vite/vitejs-accountblock/-/vitejs-accountblock-2.3.18.tgz#94ec8c6a5b77405726d3fbb0303c0371cac85575"
+  resolved "https://registry.yarnpkg.com/@vitex/vitejs-accountblock/-/vitejs-accountblock-2.3.18.tgz#94ec8c6a5b77405726d3fbb0303c0371cac85575"
   integrity sha512-foS3yJosqA0F4XBZUu8H35lShK5N0UhV0pcM/ZnJiXPs9UgiinTDmAKELcX0vzBRZoQ9D7s5f3A2DPKYofco6w==
 
-"@vite/vitejs-http@^2.3.17":
+"@vitex/vitejs-http@^2.3.17":
   version "2.3.18"
-  resolved "https://registry.yarnpkg.com/@vite/vitejs-http/-/vitejs-http-2.3.18.tgz#af469ab9996b98c74fe5edb6cc7b466ea84bf33f"
+  resolved "https://registry.yarnpkg.com/@vitex/vitejs-http/-/vitejs-http-2.3.18.tgz#af469ab9996b98c74fe5edb6cc7b466ea84bf33f"
   integrity sha512-jxTqPShspvxArNbv/utJxFfS5rxrfjU46vrevKFbADxBhbUSz427pL8Izi25+yr3ecI0GkvrdpbCAp3mr4EDfA==
 
-"@vite/vitejs-ipc@^2.3.17":
+"@vitex/vitejs-ipc@^2.3.17":
   version "2.3.18"
-  resolved "https://registry.yarnpkg.com/@vite/vitejs-ipc/-/vitejs-ipc-2.3.18.tgz#8d683ca8bd429c2e8f4eba11d3a5505627473c14"
+  resolved "https://registry.yarnpkg.com/@vitex/vitejs-ipc/-/vitejs-ipc-2.3.18.tgz#8d683ca8bd429c2e8f4eba11d3a5505627473c14"
   integrity sha512-qEXuL9wBnwO6U5XurH529lWC741Y47K5N7iXnMPh4Jsih0ZGmDg4rymboVLh7IqU2+kWITJb0c2RE8HULcEVVQ==
 
-"@vite/vitejs-ws@^2.3.17":
+"@vitex/vitejs-ws@^2.3.17":
   version "2.3.18"
-  resolved "https://registry.yarnpkg.com/@vite/vitejs-ws/-/vitejs-ws-2.3.18.tgz#ede7438847718f2dc7e57fe182c3fd1e9a7a13b5"
+  resolved "https://registry.yarnpkg.com/@vitex/vitejs-ws/-/vitejs-ws-2.3.18.tgz#ede7438847718f2dc7e57fe182c3fd1e9a7a13b5"
   integrity sha512-sYFP0EA3i8pZrnDvZwtv6AuJ5MAIrnU4KflA92DSPqekhggCo7lYmUG5Xvb6soJkDG/J5UBW8+/bUD+e3U7eTw==
 
-"@vite/vitejs@^2.3.17":
+"@vitex/vitejs@^2.3.17":
   version "2.3.18"
-  resolved "https://registry.yarnpkg.com/@vite/vitejs/-/vitejs-2.3.18.tgz#ad9e02e43f1689a348640372a807a15c88b8814c"
+  resolved "https://registry.yarnpkg.com/@vitex/vitejs/-/vitejs-2.3.18.tgz#ad9e02e43f1689a348640372a807a15c88b8814c"
   integrity sha512-vpgArcEGzNBbnOfuFWyefMioTaG/7kZ6M9LiIfF9Xz2ajgbdjR4NS/L4hcP2Vs4vlJKv6kH3GZ3Zee7Nd9Slcg==
   dependencies:
     "@sisi/ed25519-blake2b-hd-key" "^1.0.2"
@@ -133,11 +133,11 @@
   integrity sha512-4p7kKEorxDcKeQ8XUBq8nLXgvSktFXmB8+5Flvbl81J1zKfRowzjxDZyLnyR4VueS62B8Q4Ht3L6uAOoKUeCqA==
   dependencies:
     "@vite/solppc" "^0.8.0-alpha.3"
-    "@vite/vitejs" "^2.3.17"
-    "@vite/vitejs-accountblock" "^2.3.17"
-    "@vite/vitejs-http" "^2.3.17"
-    "@vite/vitejs-ipc" "^2.3.17"
-    "@vite/vitejs-ws" "^2.3.17"
+    "@vitex/vitejs" "^2.3.17"
+    "@vitex/vitejs-accountblock" "^2.3.17"
+    "@vitex/vitejs-http" "^2.3.17"
+    "@vitex/vitejs-ipc" "^2.3.17"
+    "@vitex/vitejs-ws" "^2.3.17"
     glob "^7.2.0"
     path "^0.12.7"
     yargs "^17.3.1"

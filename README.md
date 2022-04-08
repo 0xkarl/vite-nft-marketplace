@@ -12,6 +12,9 @@
 
 Video demo at https://youtu.be/3vnsU9wNgaY
 
+### Devnet
+
+Localnet uses local privat keys for faster development while testnet uses Vite Connect.
 ### Testnet
 
 Dapp at https://vite-nft-marketplace.surge.sh
