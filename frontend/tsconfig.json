@@ -27,8 +27,7 @@
       "@config/*": ["./src/config/*"],
       "@types/*": ["./src/types/*"],
       "@data/*": ["./src/data/*"],
-      "@react-vite/*": ["./src/react-vite/*"],
-      "@vitex/*": ["./src/vendor/vite/*"]
+      "@react-vite/*": ["./src/react-vite/*"]
     }
   },
   "include": ["src"],

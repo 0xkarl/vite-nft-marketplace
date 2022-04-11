@@ -90,16 +90,16 @@ export const ViteConnectProvider: FC<{ children: ReactNode }> = ({
               block: {
                 ...b,
                 toAddress: b._toAddress,
-              }
+              },
             },
           ],
         })
         .then((r: any) => {
-          console.log(r)
+          console.log(r);
           resolve(r);
         })
         .catch((e: any) => {
-          console.log(e)
+          console.log(e);
           reject(e);
         });
     });

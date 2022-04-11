@@ -280,6 +280,7 @@ const Page: FC<{ match: { params: { tokenId: string } } }> = ({
   const lastSelfBid = useMemo(
     () =>
       hasBid &&
+      walletAddress &&
       bids.find((b) => b.bidder.toLowerCase() === walletAddress.toLowerCase()),
     [bids, walletAddress, hasBid]
   );

@@ -1,4 +1,4 @@
-import { vite, WS_RPC } from '@vitex';
+import { vite, WS_RPC } from './vite';
 
 export function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));

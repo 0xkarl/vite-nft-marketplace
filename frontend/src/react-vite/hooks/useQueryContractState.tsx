@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { vite, WS_RPC } from '@vitex';
 
+import { vite, WS_RPC } from '../vite';
 import { Fragment } from '../types';
 
 export function useQueryContractState<T>(
@@ -57,8 +57,10 @@ export function useQueryContractState<T>(
             'createVmlogSubscription',
             filterParams
           );
-          event.on(() => {
-            load();
+          event.on((logs: any[]) => {
+            if (logs.length) {
+              load();
+            }
           });
 
           unsubs.push(() => {

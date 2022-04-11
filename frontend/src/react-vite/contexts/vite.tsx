@@ -1,6 +1,6 @@
 import { useContext, createContext } from 'react';
-import { WS_RPC } from '@vitex';
 
+import { WS_RPC } from '../vite';
 import { Network } from '../types';
 
 export const ViteProviderContext = createContext<{

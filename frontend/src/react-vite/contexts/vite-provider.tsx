@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, useMemo, useState } from 'react';
-import { vite, WS_RPC } from '@vitex';
 
+import { vite, WS_RPC } from '../vite';
 import { Network } from '../types';
 import { ViteProviderContext } from './vite';
 

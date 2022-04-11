@@ -1,6 +1,6 @@
 import { useMemo, useEffect, useState } from 'react';
-import { vite, WS_RPC } from '@vitex';
 
+import { vite, WS_RPC } from '../vite';
 import { Fragment } from '../types';
 
 export type Log = {
@@ -97,8 +97,10 @@ export function useVmLogs<T>(
           'createVmlogSubscription',
           filterParams
         );
-        event.on(() => {
-          load();
+        event.on((logs: any[]) => {
+          if (logs.length) {
+            load();
+          }
         });
 
         unsubs.push(() => {
