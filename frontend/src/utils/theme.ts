@@ -3,7 +3,7 @@ import { BORDER_RADIUS } from '@config';
 
 export default createTheme({
   typography: {
-    fontFamily: ['DM Sans', 'Helvetica', 'sans-serif'].join(','),
+    fontFamily: ['Metropolis', 'Helvetica', 'Arial', 'sans-serif'].join(','),
   },
   palette: {
     background: {
