@@ -1,4 +1,4 @@
-export const BORDER_RADIUS = 12;
+export const BORDER_RADIUS = 4;
 export const SPACING = 4;
 
 export const LG_BREAKPOINT = 'md';
